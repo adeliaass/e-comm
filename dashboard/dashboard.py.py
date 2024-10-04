@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the data
-file_path = "all_data.csv"  # Adjust the path if necessary
+file_path = "dashboard/all_data.csv"  # Adjust the path if necessary
 if os.path.exists(file_path):
     all_data_df = pd.read_csv(file_path)
 else:
