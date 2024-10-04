@@ -4,7 +4,12 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the data
-all_data_df = pd.read_csv("all_data.csv")
+file_path = "all_data.csv"  # Adjust the path if necessary
+if os.path.exists(file_path):
+    all_data_df = pd.read_csv(file_path)
+else:
+    st.error(f"File '{file_path}' not found.")
+    st.stop()
 
 # Ensure 'order_purchase_timestamp' is in datetime format
 all_data_df['order_purchase_timestamp'] = pd.to_datetime(all_data_df['order_purchase_timestamp'])
